@@ -1,0 +1,8 @@
+CREATE TABLE HotelChain (
+    ChainID INT PRIMARY KEY AUTO_INCREMENT,
+    ChainName VARCHAR(100) NOT NULL UNIQUE, 
+    CentralOfficeAddress VARCHAR(255) NOT NULL,
+    NumberOfHotels INT DEFAULT 0,
+    Email VARCHAR(100) UNIQUE NOT NULL,
+    PhoneNumber VARCHAR(15) UNIQUE NOT NULL
+);

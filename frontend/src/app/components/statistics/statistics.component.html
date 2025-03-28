@@ -1,0 +1,48 @@
+<div class="container py-4">
+    <button class="btn btn-outline-secondary mb-3" (click)="goToDashboard()">
+        ← Back to Dashboard
+    </button>
+    
+    <h2 class="mb-4">Hotel Statistics</h2>
+  
+    <div *ngIf="loading" class="text-muted mb-4">Loading statistics...</div>
+    <div *ngIf="error" class="alert alert-danger">{{ error }}</div>
+  
+    <!-- Available Rooms Per Area -->
+    <div *ngIf="roomsPerArea.length > 0" class="mb-5">
+      <h4>Available Rooms Per Area</h4>
+      <table class="table table-bordered table-hover mt-3">
+        <thead class="table-light">
+          <tr>
+            <th>Area</th>
+            <th>Available Rooms</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let row of roomsPerArea">
+            <td>{{ row.region }}</td>
+            <td>{{ row["available rooms"]}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+    <!-- Available Capacity Per Hotel -->
+    <div *ngIf="capacityPerHotel.length > 0">
+      <h4>Available Capacity Per Hotel</h4>
+      <table class="table table-bordered table-hover mt-3">
+        <thead class="table-light">
+          <tr>
+            <th>Hotel Name</th>
+            <th>Available Capacity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let row of capacityPerHotel">
+            <td>{{ row.HotelName }}</td>
+            <td>{{ row.AvailableCapacity }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

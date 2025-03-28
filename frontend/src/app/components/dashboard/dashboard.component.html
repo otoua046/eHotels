@@ -1,0 +1,25 @@
+<!-- Top-right logout button -->
+<div class="position-absolute top-0 end-0 p-3">
+    <button class="btn btn-danger" (click)="logout()">Logout</button>
+  </div>
+  
+  <!-- Main dashboard content -->
+  <div class="container py-5 text-center">
+    <h2 class="mb-4">Employee Dashboard</h2>
+    <p class="mb-5">Welcome back! What would you like to do?</p>
+  
+    <div class="row justify-content-center g-3 mb-4">
+      <div class="col-auto">
+        <a routerLink="/search" class="btn btn-outline-primary btn-lg">Search Rooms</a>
+      </div>
+      <div class="col-auto">
+        <a routerLink="/bookings" class="btn btn-outline-success btn-lg">View Bookings</a>
+      </div>
+      <div class="col-auto">
+        <a routerLink="/rentings" class="btn btn-outline-info btn-lg">View Rentings</a>
+      </div>
+      <div class="col-auto">
+        <a routerLink="/statistics" class="btn btn-outline-warning btn-lg">View Statistics</a>
+      </div>
+    </div>
+  </div>

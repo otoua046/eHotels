@@ -1,0 +1,60 @@
+<div class="container py-4">
+
+    <button class="btn btn-outline-secondary mb-3" (click)="goToDashboard()">
+        ← Back to Dashboard
+    </button>
+    
+    <h2 class="mb-4">Current Bookings</h2>
+  
+    <div *ngIf="error" class="alert alert-danger">{{ error }}</div>
+  
+    <div *ngIf="bookings.length > 0" class="table-responsive">
+      <table class="table table-hover table-bordered align-middle">
+        <thead class="table-light">
+          <tr>
+            <th>Booking ID</th>
+            <th>Customer</th>
+            <th>Room ID</th>
+            <th>Price</th>
+            <th>Capacity</th>
+            <th>View</th>
+            <th>Start</th>
+            <th>End</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let booking of bookings">
+            <td>{{ booking.BookingID }}</td>
+            <td>{{ booking.CustomerName }}</td>
+            <td>{{ booking.RoomID }}</td>
+            <td>${{ booking.RoomPrice }}</td>
+            <td>{{ booking.Capacity }}</td>
+            <td>{{ booking.ViewType }}</td>
+            <td>{{ booking.StartDate }}</td>
+            <td>{{ booking.EndDate }}</td>
+            <td>{{ booking.Status }}</td>
+            <td>
+                <button 
+                    class="btn btn-primary btn-sm"
+                    [disabled]="booking.Status !== 'Booked'"
+                    (click)="rentNow(booking)">
+                    Rent Now
+                </button>
+              </td>
+          </tr>
+        </tbody>
+      </table>
+      <app-rent-modal
+        *ngIf="selectedBooking"
+        [bookingId]="selectedBooking.BookingID"
+        [roomId]="selectedBooking.RoomID"
+        [customerId]="selectedBooking.CustomerID"
+        (closed)="selectedBooking = null">
+      </app-rent-modal>
+      
+    </div>
+  
+    <div *ngIf="!error && bookings.length === 0" class="text-muted">No active bookings.</div>
+  </div>

@@ -1,0 +1,148 @@
+<div class="fullscreen-bg">
+
+    <div class="container py-4">
+        <button *ngIf="userType === 'employee'" class="btn btn-outline-secondary mb-3" (click)="goToDashboard()">
+            ← Back to Dashboard
+        </button>
+      <h2 class="mb-4">Find Your Perfect Stay</h2>
+  
+      <form class="row g-4" (ngSubmit)="search()">
+        <div class="col-md-3">
+          <label class="form-label">Check-In Date</label>
+          <input type="date" class="form-control" [(ngModel)]="filters.start_date" name="start_date" required>
+        </div>
+        <div class="col-md-3">
+          <label class="form-label">Check-Out Date</label>
+          <input type="date" class="form-control" [(ngModel)]="filters.end_date" name="end_date" required>
+        </div>
+        <div class="col-md-2">
+          <label class="form-label">Room Type</label>
+          <select class="form-select" [(ngModel)]="filters.capacity" name="capacity">
+            <option value="">Any Type</option>
+            <option value="Single">Single</option>
+            <option value="Double">Double</option>
+            <option value="Triple">Triple</option>
+            <option value="Quad">Quad</option>
+          </select>
+        </div>
+        <div class="col-md-2">
+          <label class="form-label">Location</label>
+          <input type="text" class="form-control" [(ngModel)]="filters.area" name="area" placeholder="City or area">
+        </div>
+        <div class="col-md-2">
+          <label class="form-label">Hotel Stars</label>
+          <select class="form-select" [(ngModel)]="filters.category" name="category">
+            <option value="">Any Rating</option>
+            <option *ngFor="let n of [1,2,3,4,5]" [value]="n + '-star'">{{n}} ★</option>
+          </select>
+        </div>
+        <div class="col-md-2">
+          <label class="form-label">Min Price ($)</label>
+          <input type="number" class="form-control" [(ngModel)]="filters.min_price" name="min_price" placeholder="0">
+        </div>
+        <div class="col-md-2">
+          <label class="form-label">Max Price ($)</label>
+          <input type="number" class="form-control" [(ngModel)]="filters.max_price" name="max_price" placeholder="1000+">
+        </div>
+        <div class="col-md-2">
+          <label class="form-label">View Type</label>
+          <select class="form-select" [(ngModel)]="filters.view" name="view">
+            <option value="">Any View</option>
+            <option value="Sea">Ocean View</option>
+            <option value="Mountain">Mountain View</option>
+          </select>
+        </div>
+        <div class="col-md-2">
+          <label class="form-label">Extendable</label>
+          <select class="form-select" [(ngModel)]="filters.extendable" name="extendable">
+            <option value="">Either</option>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+          </select>
+        </div>
+        <div class="col-12 mt-2">
+          <button type="submit" class="btn btn-primary" (click)="search()" [disabled]="!filters.start_date || !filters.end_date">
+            Search Rooms
+          </button>
+        </div>
+      </form>
+  
+      <hr class="my-4">
+  
+      <div *ngIf="loading" class="loading">
+        Finding available rooms...
+      </div>
+      <div *ngIf="error" class="text-danger">
+        {{ error }}
+      </div>
+  
+      <div *ngIf="rooms.length > 0" class="table-responsive mt-4">
+        <table class="table table-hover align-middle">
+          <thead>
+            <tr>
+              <th>Room</th>
+              <th>Price/Night</th>
+              <th>Type</th>
+              <th>View</th>
+              <th>Extendable</th>
+              <th>Hotel</th>
+              <th>Location</th>
+              <th>Rating</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let room of rooms">
+              <td class="fw-semibold">#{{ room.RoomID }}</td>
+              <td class="text-success fw-bold">${{ room.Price }}</td>
+              <td><span class="badge bg-light text-dark">{{ room.Capacity }}</span></td>
+              <td>
+                <span *ngIf="room.ViewType === 'Sea'" class="badge bg-info text-white">
+                  Ocean
+                </span>
+                <span *ngIf="room.ViewType === 'Mountain'" class="badge bg-secondary text-white">
+                  Mountain
+                </span>
+              </td>
+              <td>
+                <span [class.bg-success]="room.CanBeExtended" [class.bg-secondary]="!room.CanBeExtended" class="badge text-white">
+                  {{ room.CanBeExtended ? 'Yes' : 'No' }}
+                </span>
+              </td>
+              <td class="fw-semibold">{{ room.HotelName }}</td>
+              <td class="text-muted">{{ room.HotelAddress }}</td>
+              <td>
+                <span *ngIf="room.Category" class="text-warning">
+                  {{ room.Category.replace('-star', '') }} ★
+                </span>
+              </td>
+              <!-- Table buttons -->
+              <td>
+                <button *ngIf="userType === 'customer'" class="btn btn-success" (click)="openBooking(room)">Book Now</button>
+                <button *ngIf="userType === 'employee'" class="btn btn-primary btn-sm" (click)="openDirectRenting(room)">Rent Now</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+
+        <!-- Shared Modal Slot -->
+        <app-booking-modal
+            *ngIf="userType === 'customer' && selectedRoom"
+            [roomId]="selectedRoom.RoomID"
+            [startDate]="filters.start_date"
+            [endDate]="filters.end_date"
+            (closed)="selectedRoom = null">
+        </app-booking-modal>
+
+        <app-direct-renting-modal
+            *ngIf="userType === 'employee' && selectedRoom"
+            [roomId]="selectedRoom.RoomID"
+            [checkInDate]="filters.start_date"
+            [checkOutDate]="filters.end_date"
+            (closed)="selectedRoom = null">
+        </app-direct-renting-modal>
+    </div>
+</div>
+  

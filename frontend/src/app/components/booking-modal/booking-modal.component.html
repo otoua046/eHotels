@@ -1,0 +1,40 @@
+<div class="modal-backdrop fade show"></div>
+<div class="modal fade show d-block" tabindex="-1" style="background-color: rgba(0,0,0,0.5);">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-dark">Book Room #{{ roomId }}</h5>
+        <button type="button" class="btn-close" (click)="closeModal()"></button>
+      </div>
+      <div class="modal-body">
+        <ng-container [ngSwitch]="step">
+        
+          <!-- Step 1: Name input -->
+          <div *ngSwitchCase="1">
+            <label class="form-label text-dark">Enter your full name</label>
+            <input [(ngModel)]="name" type="text" class="form-control mb-3" placeholder="John Doe" required />
+            <button class="btn btn-primary w-100" (click)="checkCustomer()" [disabled]="!name">Continue</button>
+          </div>
+
+          <!-- Step 2: Address & ID Type for new customer -->
+          <div *ngSwitchCase="2">
+            <label class="form-label">Address</label>
+            <input [(ngModel)]="address" type="text" class="form-control mb-2" placeholder="123 Main St" required />
+
+            <label class="form-label">ID Type</label>
+            <select [(ngModel)]="idType" class="form-select mb-3" required>
+              <option value="SSN">SSN</option>
+              <option value="Driving License">Driver License</option>
+            </select>
+
+            <button class="btn btn-success w-100" [disabled]="!address || !idType || isSubmitting" (click)="submitBooking()">Submit Booking</button>
+          </div>
+        </ng-container>
+
+        <!-- Status messages -->
+        <div *ngIf="bookingSuccess" class="alert alert-success mt-3">✅ Booking successful!</div>
+        <div *ngIf="bookingError" class="alert alert-danger mt-3">❌ {{ bookingError }}</div>
+      </div>
+    </div>
+  </div>
+</div>

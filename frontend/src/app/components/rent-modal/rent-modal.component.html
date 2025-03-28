@@ -1,0 +1,22 @@
+<div class="modal-backdrop fade show"></div>
+<div class="modal fade show d-block" tabindex="-1" style="background-color: rgba(0,0,0,0.5);">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Rent Booking #{{ bookingId }}</h5>
+        <button type="button" class="btn-close" (click)="closeModal()"></button>
+      </div>
+      <div class="modal-body">
+        <label>Credit Card Number (optional)</label>
+        <input [(ngModel)]="creditCardNumber" type="text" class="form-control mb-3" placeholder="1234 5678 9012 3456" />
+
+        <button class="btn btn-success w-100" [disabled]="isSubmitting" (click)="confirmRenting()">
+          Confirm Renting
+        </button>
+
+        <div *ngIf="rentSuccess" class="alert alert-success mt-3">Renting confirmed!</div>
+        <div *ngIf="rentError" class="alert alert-danger mt-3">{{ rentError }}</div>
+      </div>
+    </div>
+  </div>
+</div>

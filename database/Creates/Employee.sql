@@ -1,0 +1,9 @@
+CREATE TABLE Employee (
+    EmployeeID INT PRIMARY KEY AUTO_INCREMENT,
+    HotelID INT NOT NULL,
+    FullName VARCHAR(100) NOT NULL,
+    Address VARCHAR(255) NOT NULL,
+    SSN_SIN VARCHAR(20) UNIQUE NOT NULL,
+    Role ENUM('Manager', 'Receptionist', 'Housekeeping') NOT NULL,
+    FOREIGN KEY (HotelID) REFERENCES Hotel(HotelID) ON DELETE CASCADE
+);
