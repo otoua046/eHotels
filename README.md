@@ -1,6 +1,6 @@
 # 🏨 eHotels - CSI2132 Project
 
-<img width="1610" alt="Screenshot 2025-03-28 at 1 29 56 AM" src="https://github.com/user-attachments/assets/ed589ec1-e2ec-495a-8894-bfe9cbeec081" />
+<img width="1610" alt="Screenshot 2025-03-28 at 1 31 14 AM" src="https://github.com/user-attachments/assets/3c50be9d-cd08-4746-89bb-0cb134b933d1" />
 
 ## 📚 Course
 This project was developed as part of **CSI2132 - Databases** at the University of Ottawa. The goal of the course is to introduce students to practical and theoretical aspects of relational databases, including SQL, schema design, normalization, indexing, and database application development.
