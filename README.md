@@ -16,7 +16,7 @@ This full-stack web application simulates an online hotel room booking and renti
 
 ## 📁 Project Structure
 ```
-EHOTELS/
+eHotels/
 ├── backend/
 │   └── api/                   # PHP API endpoints
 │       ├── create_customer.php
