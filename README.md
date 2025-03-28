@@ -51,19 +51,19 @@ EHOTELS/
 mysql -u root -p
 
 # Run the initialization script
-SOURCE /path/to/EHOTELS/database/init_database.sql;
+SOURCE /path/to/eHotels/database/init_database.sql;
 ```
 
 ### 3. Backend (PHP API)
 ```bash
-cd EHOTELS/backend/api
+cd eHotels/backend/api
 php -S localhost:8000
 ```
 Make sure your PHP server is running at `http://localhost:8000`.
 
 ### 4. Frontend (Angular)
 ```bash
-cd EHOTELS/frontend
+cd eHotels/frontend
 npm install
 ng serve --open
 ```
