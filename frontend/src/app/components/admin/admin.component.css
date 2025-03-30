@@ -1,0 +1,110 @@
+.dashboard-container {
+    background: url('../../../assets/morgan-lane-iMnSqmT2RGE-unsplash.jpg') center/cover no-repeat fixed;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+.glassmorphism-panel {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-title {
+    font-weight: 700;
+    color: #2d3436;
+    font-size: 2.5rem;
+}
+
+.welcome-text {
+    color: #636e72;
+    font-size: 1.1rem;
+}
+
+.admin-name {
+    color: #0984e3;
+    font-weight: 600;
+}
+
+.logout-btn {
+    background: rgba(255, 107, 107, 0.1);
+    border: 2px solid #ff6b6b;
+    color: #ff6b6b;
+    padding: 0.8rem 1.5rem;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+    background: #ff6b6b;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.management-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.management-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 16px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.management-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.2));
+    transform: rotate(45deg);
+    transition: all 0.5s ease;
+}
+
+.management-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+}
+
+.management-card:hover::before {
+    animation: shine 1.5s;
+}
+
+@keyframes shine {
+    0% { transform: rotate(45deg) translateX(-200%); }
+    100% { transform: rotate(45deg) translateX(200%); }
+}
+
+.card-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #0984e3;
+}
+
+.management-card h3 {
+    color: #2d3436;
+    margin-bottom: 0.5rem;
+}
+
+.management-card p {
+    color: #636e72;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* Color accents */
+.customers { border-left: 4px solid #6c5ce7; }
+.employees { border-left: 4px solid #00b894; }
+.hotels { border-left: 4px solid #e84393; }
+.rooms { border-left: 4px solid #fdcb6e; }

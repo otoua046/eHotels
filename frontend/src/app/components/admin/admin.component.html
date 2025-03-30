@@ -1,0 +1,45 @@
+<div class="dashboard-container">
+    <!-- Main Content -->
+    <div class="glassmorphism-panel">
+        <!-- Header Section -->
+        <div class="d-flex justify-content-between align-items-center mb-5">
+            <div>
+                <h1 class="dashboard-title">Admin Portal</h1>
+                <p class="welcome-text">Welcome back</p>
+            </div>
+            <button class="logout-btn" (click)="logout()">
+                <i class="fas fa-sign-out-alt me-2"></i>Log Out
+            </button>
+        </div>
+
+        <!-- Management Cards Grid -->
+        <div class="management-grid">
+            <a class="management-card customers" routerLink="/admin/customers">
+                <i class="card-icon fas fa-users"></i>
+                <h3>Customers</h3>
+                <p>Manage user accounts and preferences</p>
+            </a>
+            
+            <a class="management-card employees" routerLink="/admin/employees">
+                <i class="card-icon fas fa-id-badge"></i>
+                <h3>Employees</h3>
+                <p>Handle staff members and permissions</p>
+            </a>
+
+            <a class="management-card hotels" routerLink="/admin/hotels">
+                <i class="card-icon fas fa-hotel"></i>
+                <h3>Hotels</h3>
+                <p>Configure properties and facilities</p>
+            </a>
+
+            <a class="management-card rooms" routerLink="/admin/rooms">
+                <i class="card-icon fas fa-bed"></i>
+                <h3>Rooms</h3>
+                <p>Manage inventory and pricing</p>
+            </a>
+        </div>
+    </div>
+
+    
+</div>
+

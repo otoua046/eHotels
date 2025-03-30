@@ -11,27 +11,34 @@ $area = $_GET['area'] ?? null;
 $category = $_GET['category'] ?? null;
 $minPrice = $_GET['min_price'] ?? null;
 $maxPrice = $_GET['max_price'] ?? null;
-$view = $_GET['view'] ?? null; // 'Sea', 'Mountain', or 'None'
+$view = $_GET['view'] ?? null;
 $extendable = $_GET['extendable'] ?? null;
+$minAvailableCapacity = $_GET['min_available_capacity'] ?? null;
+$hotelChain = $_GET['hotel_chain'] ?? null;
 
 $query = "
     SELECT 
         r.RoomID,
+        r.RoomNumber,
         r.Price,
         r.Capacity,
         r.ViewType,
         r.CanBeExtended,
         r.HasDamage,
+        r.ProblemDescription,
+        r.Amenities,
         h.HotelID,
         h.Address AS HotelAddress,
         h.Email AS HotelEmail,
         h.PhoneNumber AS HotelPhone,
         h.HotelName AS HotelName,
         h.Category,
-        c.CentralOfficeAddress
+        c.CentralOfficeAddress,
+        ac.AvailableCapacity AS AvailableCapacity
     FROM Room r
     JOIN Hotel h ON r.HotelID = h.HotelID
     JOIN HotelChain c ON h.ChainID = c.ChainID
+    JOIN available_capacity_per_hotel ac ON ac.HotelName = h.HotelName
     WHERE 1 = 1
 ";
 
@@ -81,9 +88,19 @@ if ($view) {
     $params['view'] = $view;
 }
 
-if ($extendable !== null) {
+if ($extendable !== null && $extendable !== '') {
     $query .= " AND r.CanBeExtended = :extendable";
     $params['extendable'] = $extendable;
+}
+
+if ($minAvailableCapacity !== null && $minAvailableCapacity !== '') {
+    $query .= " AND ac.AvailableCapacity >= :minAvailableCapacity";
+    $params['minAvailableCapacity'] = $minAvailableCapacity;
+}
+
+if ($hotelChain !== null && $hotelChain !== ''){
+    $query .= " AND c.ChainName = :hotelChain";
+    $params['hotelChain'] = $hotelChain;
 }
 
 try {

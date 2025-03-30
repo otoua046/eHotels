@@ -23,17 +23,20 @@ export class SearchRoomComponent {
     end_date: '',
     capacity: '',
     area: '',
-    //hotel_chain: '',
+    hotel_chain: '',
     category: '',
     min_price: '',
     max_price: '',
     view: '',
-    extendable: ''
+    extendable: '',
+    min_available_capacity: ''
   };
 
   rooms: Room[] = [];
   loading = false;
   error: string = '';
+  availableCapacities: any[] = [];
+  hotelChains: { ChainName: string }[] = [];
 
   constructor(private http: HttpClient, private router: Router, private roomService: RoomService) {}
  
@@ -57,6 +60,22 @@ export class SearchRoomComponent {
 
   ngOnInit() {
     this.userType = localStorage.getItem('userType') as 'customer' | 'employee';
+    
+    this.roomService.getAvailableCapacityPerHotel().subscribe({
+      next: (data) => {
+        this.availableCapacities = data;
+      },
+      error: () => {
+        console.error('Failed to load hotel capacity view');
+      }
+    });
+
+    this.roomService.getHotelChains().subscribe({
+    next: (data) => this.hotelChains = data,
+    error: () => console.error('Failed to load hotel chains')
+  
+    });
+    
   }
 
   selectedRoom: Room | null = null;
@@ -70,6 +89,8 @@ export class SearchRoomComponent {
     this.selectedRoom = room;
     console.log('Selected room for booking:', this.selectedRoom); // Debug
   }
+
+  
 
   goToDashboard() {
     this.router.navigate(['/dashboard']);

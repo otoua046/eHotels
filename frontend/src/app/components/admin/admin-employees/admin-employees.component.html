@@ -1,0 +1,55 @@
+<div class="container mt-4">
+
+    <button class="btn btn-outline-secondary mb-3" routerLink="/admin">
+        ← Back to Dashboard
+    </button>
+    
+    <h2 class="mb-3">Employee Management</h2>
+  
+    <!-- Insert Button -->
+    <button class="btn btn-primary mb-3 float-end" (click)="openInsertModal()">+ Insert Employee</button>
+  
+    <!-- Loading and Error Messages -->
+    <div *ngIf="loading">Loading...</div>
+    <div *ngIf="error" class="text-danger">{{ error }}</div>
+  
+    <!-- Employee Table -->
+    <table class="table table-bordered" *ngIf="employees.length > 0">
+      <thead class="table-light">
+        <tr>
+          <th>ID</th>
+          <th>Hotel Name</th>
+          <th>Full Name</th>
+          <th>Address</th>
+          <th>SSN</th>
+          <th>Role</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let e of employees">
+          <td>{{ e.EmployeeID }}</td>
+          <td>{{ e.HotelName }}</td>
+          <td>{{ e.FullName }}</td>
+          <td>{{ e.Address }}</td>
+          <td>{{ e.SSN_SIN }}</td>
+          <td>{{ e.Role }}</td>
+          <td>
+            <div class="d-flex gap-2">
+                <button class="btn btn-sm btn-warning me-2" (click)="openEditModal(e)">Update</button>
+                <button class="btn btn-sm btn-danger" (click)="deleteEmployee(e.EmployeeID!)">Delete</button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <!-- Modal Component -->
+    <app-employee-modal
+      *ngIf="isModalOpen"
+      [employee]="selectedEmployee"
+      [isEdit]="isEditMode"
+      (close)="handleModalClose()"
+      (saveEmployee)="handleEmployeeSave($event)">
+    </app-employee-modal>
+</div>

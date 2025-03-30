@@ -1,5 +1,97 @@
-/* Modern booking button */
-.btn-booking {
+/* Modern background with overlay */
+.fullscreen-bg {
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
+                url('assets/manuel-moreno-DGa0LQ0yDPc-unsplash.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+    position: relative;
+    color: white;
+    overflow: hidden;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+  
+  /* Top-right login - updated to match the reference */
+  .top-right {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    z-index: 2;
+    display: flex;
+    gap: 12px; /* Add spacing between buttons */
+  }
+  
+  /* Updated button styling to match the reference */
+  .btn-light {
+    background-color: rgba(255, 255, 255, 0.15); /* Semi-transparent white */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Slightly more opaque border */
+    backdrop-filter: blur(8px); /* Glassmorphism effect */
+    color: white; /* Text color */
+    padding: 0.75rem 1.5rem; /* Adjusted padding for a more compact look */
+    border-radius: 10px; /* Slightly rounded corners */
+    font-weight: 500; /* Medium font weight */
+    font-size: 1rem; /* Consistent font size */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+  }
+  
+  .btn-light:hover {
+    background-color: rgba(255, 255, 255, 0.25); /* Slightly more opaque on hover */
+    border: 1px solid rgba(255, 255, 255, 0.4); /* Slightly more visible border */
+    transform: translateY(-2px); /* Subtle lift effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow on hover */
+  }
+  
+  /* Center content with modern spacing */
+  .center-container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    z-index: 1;
+    position: relative;
+    padding: 0 24px;
+  }
+  
+  /* Modern typography */
+  h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.5px;
+  }
+  
+  .subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 3rem;
+    opacity: 0.9;
+    max-width: 500px;
+    line-height: 1.6;
+  }
+  
+  /* Modern button styles for "BOOK YOURS" */
+.btn-custom {
+  font-size: 1rem;
+  padding: 0.75rem 2rem; /* Slightly smaller padding to match the reference */
+  border-radius: 10px; /* Rounded corners */
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+  color: #111; /* Dark text color */
+  border: none;
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+  font-weight: 600; /* Medium-bold text */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  text-transform: uppercase; /* Uppercase text to match the reference */
+  letter-spacing: 0.5px; /* Slight letter spacing for a modern look */
+}
+
+.btn-custom:hover {
+  background-color: rgba(255, 255, 255, 1); /* Fully opaque white on hover */
+  transform: translateY(-2px); /* Subtle lift effect */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+  
+  /* Modern booking button */
+  .btn-booking {
     background-color: #4f46e5;
     color: white;
     border: none;
@@ -57,95 +149,6 @@
     transform-origin: left;
   }
   
-
-:host {
-    display: block;
-    height: 100vh;
-    width: 100%;
-  }
-  
-  /* Modern background with overlay */
-  .fullscreen-bg {
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
-                url('assets/manuel-moreno-DGa0LQ0yDPc-unsplash.jpg') no-repeat center center fixed;
-    background-size: cover;
-    height: 100%;
-    position: relative;
-    color: white;
-    overflow: hidden;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  }
-  
-  /* Top-right login - more subtle */
-  .top-right {
-    position: absolute;
-    top: 24px;
-    right: 24px;
-    z-index: 2;
-  }
-  
-  /* Center content with modern spacing */
-  .center-container {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    flex-direction: column;
-    z-index: 1;
-    position: relative;
-    padding: 0 24px;
-  }
-  
-  /* Modern typography */
-  h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 1.5rem;
-    letter-spacing: -0.5px;
-  }
-  
-  .subtitle {
-    font-size: 1.25rem;
-    margin-bottom: 3rem;
-    opacity: 0.9;
-    max-width: 500px;
-    line-height: 1.6;
-  }
-  
-  /* Modern button styles */
-  .btn-custom {
-    font-size: 1rem;
-    padding: 1rem 2.5rem;
-    margin: 0.5rem;
-    border-radius: 12px;
-    background-color: rgba(255, 255, 255, 0.9);
-    color: #111;
-    border: none;
-    transition: all 0.3s ease;
-    font-weight: 600;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-  
-  .btn-custom:hover {
-    background-color: #fff;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-  }
-  
-  .btn-light {
-    background-color: rgba(255, 255, 255, 0.15);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-    transition: all 0.3s ease;
-  }
-  
-  .btn-light:hover {
-    background-color: rgba(255, 255, 255, 0.25);
-  }
-  
   /* Modern modal styling */
   .modal-content {
     border-radius: 16px;
@@ -188,4 +191,10 @@
   .form-control:focus {
     border-color: #4a90e2;
     box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+  }
+  
+  :host {
+    display: block;
+    height: 100vh;
+    width: 100%;
   }

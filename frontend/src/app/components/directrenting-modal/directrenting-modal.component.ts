@@ -50,7 +50,7 @@ export class DirectRentingModalComponent {
         checkInDate: this.checkInDate,
         checkOutDate: this.checkOutDate,
         customerId: customerId,
-        employeeId: 1,
+        employeeId: 10,
         creditCard: this.creditCard
       };
 

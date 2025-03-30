@@ -6,7 +6,8 @@ import { RouterModule, Router } from '@angular/router';
   selector: 'app-dashboard',
   standalone: true,
   imports: [CommonModule, RouterModule],
-  templateUrl: './dashboard.component.html'
+  templateUrl: './dashboard.component.html',
+  styleUrl: './dashboard.component.css'
 })
 export class DashboardComponent {
   constructor(private router: Router) {}

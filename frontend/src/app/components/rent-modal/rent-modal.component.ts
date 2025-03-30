@@ -30,7 +30,7 @@ export class RentModalComponent {
       bookingId: this.bookingId,
       roomId: this.roomId,
       customerId: this.customerId,
-      employeeId: 1, // temporary until session-based auth is added
+      employeeId: 10, // temporary until session-based auth is added
       creditCard: this.creditCardNumber
     };
 

@@ -35,8 +35,8 @@ WHERE SSN_SIN = '123-45-6789';
 SELECT HotelID, NumberOfRooms FROM Hotel WHERE HotelID = 1;
 
 -- Insert a new room
-INSERT INTO Room (HotelID, Price, Capacity) 
-VALUES (1, 199.99, 'Double');
+INSERT INTO Room (HotelID, RoomNumber, Price, Amenities, Capacity, ViewType, CanBeExtended, HasDamage, ProblemDescription)
+VALUES (1, 9, 199.03, 'TV, Air Condition, Fridge', 'Triple', 'Mountain', FALSE, FALSE, NULL);
 
 -- Count increased by 1
 SELECT HotelID, NumberOfRooms FROM Hotel WHERE HotelID = 1;

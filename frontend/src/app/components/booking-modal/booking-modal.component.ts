@@ -67,9 +67,9 @@ export class BookingModalComponent {
       }
   
       const customerPayload = {
-        name: this.name,
-        address: this.address,
-        idType: this.idType
+        FullName: this.name,
+        Address: this.address,
+        IDType: this.idType
       };
   
       this.http.post('http://localhost:8000/api/create_customer.php', customerPayload).subscribe({

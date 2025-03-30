@@ -1,7 +1,7 @@
 <?php
 header('Content-Type: application/json');
 header("Access-Control-Allow-Origin: *");
-header("Access-Control-Allow-Methods: POST, OPTIONS");
+header("Access-Control-Allow-Methods: POST");
 header("Access-Control-Allow-Headers: Content-Type");
 
 // Handle preflight OPTIONS request
@@ -14,9 +14,9 @@ include 'db.php';
 
 $data = json_decode(file_get_contents('php://input'), true);
 
-$name = $data['name'] ?? null;
-$address = $data['address'] ?? null;
-$idType = $data['idType'] ?? null;
+$name = $data['FullName'] ?? null;
+$address = $data['Address'] ?? null;
+$idType = $data['IDType'] ?? null;
 
 if (!$name || !$address || !$idType) {
     http_response_code(400);
@@ -25,10 +25,7 @@ if (!$name || !$address || !$idType) {
 }
 
 try {
-    $stmt = $pdo->prepare("
-        INSERT INTO Customer (FullName, Address, IDType, RegistrationDate)
-        VALUES (:name, :address, :idType, CURDATE())
-    ");
+    $stmt = $pdo->prepare("INSERT INTO Customer (FullName, Address, IDType, RegistrationDate) VALUES (:name, :address, :idType, CURDATE())");
     $stmt->execute([
         ':name' => $name,
         ':address' => $address,

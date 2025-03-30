@@ -1,0 +1,60 @@
+<div class="container mt-4">
+
+    <button class="btn btn-outline-secondary mb-3" routerLink="/admin">
+        ← Back to Dashboard
+    </button>
+
+    <h2 class="mb-3">Hotel Management</h2>
+  
+    <!-- Insert Button -->
+    <button class="btn btn-primary mb-3 float-end" (click)="openInsertModal()">+ Insert Hotel</button>
+  
+    <!-- Loading and Error Messages -->
+    <div *ngIf="loading">Loading...</div>
+    <div *ngIf="error" class="text-danger">{{ error }}</div>
+  
+    <!-- Hotel Table -->
+    <table class="table table-bordered" *ngIf="hotels.length > 0">
+      <thead class="table-light">
+        <tr>
+          <th>ID</th>
+          <th>Chain Name</th>
+          <th>Hotel Name</th>
+          <th>Address</th>
+          <th>Email</th>
+          <th>Phone Number</th>
+          <th>Category</th>
+          <th>Number of Rooms</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let h of hotels">
+          <td>{{ h.HotelID }}</td>
+          <td>{{ h.ChainName }}</td>
+          <td>{{ h.HotelName }}</td>
+          <td>{{ h.Address }}</td>
+          <td>{{ h.Email }}</td>
+          <td>{{ h.PhoneNumber }}</td>
+          <td>{{ h.Category }}</td>
+          <td>{{ h.NumberOfRooms }}</td>
+          <td>
+            <div class="d-flex gap-2">
+                <button class="btn btn-sm btn-warning me-2" (click)="openEditModal(h)">Update</button>
+                <button class="btn btn-sm btn-danger" (click)="deleteHotel(h.HotelID!)">Delete</button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <!-- Modal Component -->
+    <app-hotel-modal
+      *ngIf="isModalOpen"
+      [hotel]="selectedHotel"
+      [isEdit]="isEditMode"
+      (close)="handleModalClose()"
+      (saveHotel)="handleHotelSave($event)">
+    </app-hotel-modal>
+    
+</div>

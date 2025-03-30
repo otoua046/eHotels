@@ -24,9 +24,19 @@ export class LandingPageComponent {
 
   loginAsEmployee() {
     const password = prompt('Enter employee password:');
-    if (password === 'admin123') {
+    if (password === 'employee123') {
       this.setUserType('employee');
       this.router.navigate(['/dashboard']);
+    } else {
+      alert('Incorrect password. Access denied.');
+    }
+  }
+
+  promptAdmin() {
+    const password = prompt('Enter admin password:');
+    if (password === 'admin123') {  
+      localStorage.setItem('userType', 'admin');
+      this.router.navigate(['/admin']);
     } else {
       alert('Incorrect password. Access denied.');
     }

@@ -60,6 +60,25 @@
             <option value="0">No</option>
           </select>
         </div>
+        <div class="col-md-2">
+            <label class="form-label">Min Available Capacity</label>
+            <input
+              type="number"
+              class="form-control"
+              [(ngModel)]="filters.min_available_capacity"
+              name="min_available_capacity"
+              placeholder="e.g. 5"
+            />
+        </div>
+        <div class="col-md-2">
+            <label class="form-label">Hotel Chain</label>
+            <select class="form-select" [(ngModel)]="filters.hotel_chain" name="hotel_chain">
+              <option value="">Any</option>
+              <option *ngFor="let chain of hotelChains" [value]="chain.ChainName">
+                {{ chain.ChainName }}
+              </option>
+            </select>
+        </div>
         <div class="col-12 mt-2">
           <button type="submit" class="btn btn-primary" (click)="search()" [disabled]="!filters.start_date || !filters.end_date">
             Search Rooms
@@ -87,6 +106,7 @@
               <th>Extendable</th>
               <th>Hotel</th>
               <th>Location</th>
+              <th>Avai. Capacity</th>
               <th>Rating</th>
               <th>Action</th>
             </tr>
@@ -111,6 +131,7 @@
               </td>
               <td class="fw-semibold">{{ room.HotelName }}</td>
               <td class="text-muted">{{ room.HotelAddress }}</td>
+              <td class="text-muted">{{ room.AvailableCapacity }}</td>
               <td>
                 <span *ngIf="room.Category" class="text-warning">
                   {{ room.Category.replace('-star', '') }} ★

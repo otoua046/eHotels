@@ -7,7 +7,8 @@ import { Room } from '../interfaces/room';
   providedIn: 'root',
 })
 export class RoomService {
-  private apiUrl = 'http://localhost:8000/api/search_rooms.php';
+
+private baseUrl = 'http://localhost:8000/api';
 
   constructor(private http: HttpClient) {}
 
@@ -18,6 +19,33 @@ export class RoomService {
         params = params.set(key, filters[key]);
       }
     });
-    return this.http.get<Room[]>(this.apiUrl, { params });
+    return this.http.get<Room[]>(`${this.baseUrl}/search_rooms.php`, { params });
+  }
+
+  getAvailableCapacityPerHotel() {
+    return this.http.get<any[]>(`${this.baseUrl}/available_capacity_per_hotel.php`);
+  }
+  
+  getHotelChains() {
+    return this.http.get<{ ChainName: string }[]>(`${this.baseUrl}/get_all_hotel_chains.php`);
+  }
+
+  getAllRooms(): Observable<Room[]> {
+    return this.http.get<Room[]>(`${this.baseUrl}/search_rooms.php`);
+  }
+  
+
+  insertRoom(room: Room): Observable<any> {
+    return this.http.post(`${this.baseUrl}/create_room.php`, room);
+  }
+
+  updateRoom(room: Room): Observable<any> {
+    return this.http.post(`${this.baseUrl}/update_room.php`, room);
+  }
+
+  deleteRoom(roomId: number): Observable<any> {
+    const form = new FormData();
+    form.append('RoomID', roomId.toString());
+    return this.http.post(`${this.baseUrl}/delete_room.php`, form);
   }
 }
