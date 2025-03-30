@@ -1,7 +1,11 @@
-# 🏨 eHotels - CSI2132 Project
+<img width="1629" alt="Screenshot 2025-03-29 at 10 31 48 PM" src="https://github.com/user-attachments/assets/2ed56a39-f32f-4163-9972-6eb4bca9c8a9" /># 🏨 eHotels - CSI2132 Project
 
-<img width="1610" alt="Screenshot 2025-03-28 at 1 31 14 AM" src="https://github.com/user-attachments/assets/3c50be9d-cd08-4746-89bb-0cb134b933d1" />
-<img width="1784" alt="Screenshot 2025-03-29 at 5 30 25 PM" src="https://github.com/user-attachments/assets/3c4d4062-333d-4bca-95e4-caf7aa378250" />
+<img width="1629" alt="Screenshot 2025-03-29 at 10 30 30 PM" src="https://github.com/user-attachments/assets/09721260-f5d1-40d8-a7d0-4eef8e0351e1" />
+<img width="1629" alt="Screenshot 2025-03-29 at 10 31 23 PM" src="https://github.com/user-attachments/assets/b8f30cc8-6c9b-40c1-912f-a8791f6b0aea" />
+<img width="1629" alt="Screenshot 2025-03-29 at 10 32 14 PM" src="https://github.com/user-attachments/assets/4823ca04-d425-4777-be3c-5df29686c8de" />
+<img width="1629" alt="Screenshot 2025-03-29 at 10 32 14 PM" src="https://github.com/user-attachments/assets/0a05c0ae-9877-4ef8-8f8f-37bdce25a3db" />
+
+
 
 ## 📚 Course
 This project was developed as part of **CSI2132 - Databases** at the University of Ottawa. The goal of the course is to introduce students to practical and theoretical aspects of relational databases, including SQL, schema design, normalization, indexing, and database application development.
