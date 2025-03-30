@@ -1,11 +1,6 @@
 # 🏨 eHotels - CSI2132 Project
 
 <img width="1629" alt="Screenshot 2025-03-29 at 10 30 30 PM" src="https://github.com/user-attachments/assets/09721260-f5d1-40d8-a7d0-4eef8e0351e1" />
-<img width="1629" alt="Screenshot 2025-03-29 at 10 31 23 PM" src="https://github.com/user-attachments/assets/b8f30cc8-6c9b-40c1-912f-a8791f6b0aea" />
-<img width="1629" alt="Screenshot 2025-03-29 at 10 32 14 PM" src="https://github.com/user-attachments/assets/4823ca04-d425-4777-be3c-5df29686c8de" />
-<img width="1629" alt="Screenshot 2025-03-29 at 10 31 48 PM" src="https://github.com/user-attachments/assets/5ae2c2d5-d28d-427e-a619-139f2602e14f" />
-
-
 
 
 ## 📚 Course
@@ -19,6 +14,7 @@ This full-stack web application simulates an online hotel room booking and renti
 - **Rent a room** as an employee either from a booking or directly.
 - **View statistics** from MySQL views like available capacity per hotel or available rooms per area.
 - **Employee dashboard** for easy access to bookings, rentings, and hotel insights.
+- **Admin panel** to manage customers, employees, hotels, and rooms with full Insert, Update, and Delete capabilities.
 
 ## 📁 Project Structure
 ```
@@ -87,6 +83,13 @@ Angular should start on `http://localhost:4200`.
 - `drop_all_tables.sql`: Only drops tables, preserving the database
 
 ---
+
+## 🏨 Webpage Screenshots
+
+<img width="1629" alt="Screenshot 2025-03-29 at 10 31 23 PM" src="https://github.com/user-attachments/assets/b8f30cc8-6c9b-40c1-912f-a8791f6b0aea" />
+<img width="1629" alt="Screenshot 2025-03-29 at 10 32 14 PM" src="https://github.com/user-attachments/assets/4823ca04-d425-4777-be3c-5df29686c8de" />
+<img width="1629" alt="Screenshot 2025-03-29 at 10 31 48 PM" src="https://github.com/user-attachments/assets/5ae2c2d5-d28d-427e-a619-139f2602e14f" />
+
 
 ## 👨‍💼 Authors
 
