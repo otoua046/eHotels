@@ -2,6 +2,9 @@
 
 <img width="1629" alt="Screenshot 2025-03-29 at 10 30 30 PM" src="https://github.com/user-attachments/assets/09721260-f5d1-40d8-a7d0-4eef8e0351e1" />
 
+## 🎥 Demo Video
+
+[Watch the Demo Video]([https://uottawa-my.sharepoint.com/personal/otoua046_uottawa_ca/_layouts/15/stream.aspx?id=%2Fpersonal%2Fotoua046%5Fuottawa%5Fca%2FDocuments%2FDemo%20CSI%2Emp4](https://uottawa-my.sharepoint.com/personal/otoua046_uottawa_ca/_layouts/15/guestaccess.aspx?share=EfKXavO1s4BNutEAj3PZBdABaogkzlyP-TlKsWxLOKG00g&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=7gNzR4))
 
 ## 📚 Course
 This project was developed as part of **CSI2132 - Databases** at the University of Ottawa. The goal of the course is to introduce students to practical and theoretical aspects of relational databases, including SQL, schema design, normalization, indexing, and database application development.
