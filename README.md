@@ -1,4 +1,4 @@
-<img width="1629" alt="Screenshot 2025-03-29 at 10 31 48 PM" src="https://github.com/user-attachments/assets/2ed56a39-f32f-4163-9972-6eb4bca9c8a9" /># 🏨 eHotels - CSI2132 Project
+# 🏨 eHotels - CSI2132 Project
 
 <img width="1629" alt="Screenshot 2025-03-29 at 10 30 30 PM" src="https://github.com/user-attachments/assets/09721260-f5d1-40d8-a7d0-4eef8e0351e1" />
 <img width="1629" alt="Screenshot 2025-03-29 at 10 31 23 PM" src="https://github.com/user-attachments/assets/b8f30cc8-6c9b-40c1-912f-a8791f6b0aea" />
