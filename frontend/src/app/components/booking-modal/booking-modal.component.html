@@ -18,10 +18,10 @@
 
           <!-- Step 2: Address & ID Type for new customer -->
           <div *ngSwitchCase="2">
-            <label class="form-label">Address</label>
+            <label class="form-label text-dark">Address</label>
             <input [(ngModel)]="address" type="text" class="form-control mb-2" placeholder="123 Main St" required />
 
-            <label class="form-label">ID Type</label>
+            <label class="form-label text-dark">ID Type</label>
             <select [(ngModel)]="idType" class="form-select mb-3" required>
               <option value="SSN">SSN</option>
               <option value="Driving License">Driver License</option>
