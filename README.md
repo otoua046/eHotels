@@ -4,7 +4,7 @@
 
 ## 🎥 Demo Video
 
-[🎬 Watch the Demo Video](https://uottawa-my.sharepoint.com/personal/otoua046_uottawa_ca/_layouts/15/guestaccess.aspx?share=EfKXavO1s4BNutEAj3PZBdABaogkzlyP-TlKsWxLOKG00g&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=7gNzR4)
+[🎬 Watch the Demo Video](https://uottawa-my.sharepoint.com/personal/otoua046_uottawa_ca/_layouts/15/guestaccess.aspx?share=EWVaLOORJwhDlmUdxseAbiUBKc4F1Y7FlpzCwrxFYijCPg&e=B3KzS4layouts/15/guestaccess.aspx?share=EfKXavO1s4BNutEAj3PZBdABaogkzlyP-TlKsWxLOKG00g&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=7gNzR4)
 
 ## 📚 Course
 This project was developed as part of **CSI2132 - Databases** at the University of Ottawa. The goal of the course is to introduce students to practical and theoretical aspects of relational databases, including SQL, schema design, normalization, indexing, and database application development.
