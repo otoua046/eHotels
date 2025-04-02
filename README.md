@@ -96,9 +96,9 @@ Angular should start on `http://localhost:4200`.
 
 ## 👨‍💼 Authors
 
-- Sam Touahri — University of Ottawa
-- Hannah Mary Jurewicz-Turner - University of Ottawa
-- Katherine Casey - University of Ottawa
+- Sam Touahri: Full-Stack Developper — University of Ottawa
+- Hannah Mary Jurewicz-Turner: Database Engineer - University of Ottawa
+- Katherine Casey: Database Engineer - University of Ottawa
 
 ---
 
